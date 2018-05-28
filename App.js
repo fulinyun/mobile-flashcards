@@ -122,9 +122,7 @@ export default class App extends Component {
   }
 
   componentDidMount () {
-    clearLocalNotification()
-    .then(_ => initStorage(data))
-      .then(_ => getDecks())
+    getDecks()
       .then(decks => this.setState({ ready: true, decks }))
       .then(_ => setLocalNotification())
   }
